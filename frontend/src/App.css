@@ -13,7 +13,7 @@
 body {
   padding: 0%;
   margin: 0%;
-  /* background-color: black; */
+  background-color: rgb(255, 255, 255);
 }
 
 header {
@@ -34,9 +34,9 @@ header {
 }
 
 header h1 {
-  font-family: "Tektur", sans-serif;
-  font-weight: 900;
-  font-size: 2.8rem;
+    font-family: "Tektur", sans-serif;
+    font-weight: 900;
+    font-size: 2.8rem;
   /* background-image: url('{% static "images/rubiks-bg.jpg" %}'); */
   color: transparent;
   background-repeat: repeat;
@@ -52,6 +52,16 @@ header h1 {
   flex-direction: row;
   justify-content: space-evenly;
   width: 25%;
+}
+.hero-section {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  /* or however tall it should be */
+  background-color: white;
+  z-index: 2;
+  /* above parallax section */
 }
 
 .navbar a {
@@ -87,11 +97,27 @@ header h1 {
 .hero {
   width: 100%;
   padding-top: 2rem;
-  /* background: linear-gradient(-90deg, rgba(63, 94, 251, 1) 10%, rgb(255, 74, 110) 90%); */
+  /* position: relative; */
+ 
   background-image: radial-gradient(circle 710px at 40% 10%,
       rgba(37, 89, 222, 1) 0%,
       rgba(37, 89, 222, 1) 7.5%,
       rgb(0, 0, 125) 44.7%);
+}
+.hero{
+  position: relative;
+  min-height: 100vh;
+
+  padding: 4rem;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2);
+  /* gives paper lift feel */
+  z-index: 1;
+}
+.se{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: aqua;
 }
 
 .content {
@@ -106,6 +132,7 @@ header h1 {
 
 .hero-text-section {
   width: 50%;
+  /* position: fixed; */
   font-family: "Audiowide", sans-serif;
 }
 
@@ -125,6 +152,8 @@ header h1 {
 .hero-img-section {
   width: 60%;
   display: flex;
+  position: absolute;
+  right: 1rem;
   align-items: center;
   justify-content: center;
   /* margin: auto; */
@@ -154,4 +183,25 @@ canvas{
     /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
     transform: translatey(0px);
   }
+}
+
+.slogan{
+   height: 100vh;
+   width: 100%;
+   background-color: #fff;
+   position: relative;
+   padding: 0%;
+   margin: 0%;
+}
+
+.slogan h2{
+  padding: 0%;
+  margin: 0%;
+  color: black;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+    font-family: "Tektur", sans-serif;
+      font-weight: 900;
+      font-size: 2.8rem;
 }

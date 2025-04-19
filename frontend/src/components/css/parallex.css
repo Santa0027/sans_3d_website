@@ -1,0 +1,21 @@
+.parallax-container {
+    position: relative;
+    z-index: 2;
+    margin-top: -100vh;
+    /* bring it up over the hero */
+}
+
+.parallax-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    /* background-image: url('/images/main.jpg'); */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+    /* paper shadow */
+}

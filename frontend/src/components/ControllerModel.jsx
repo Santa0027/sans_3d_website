@@ -1,10 +1,19 @@
-import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import React, { Suspense, useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 
 const Controller = () => {
+  const modelRef = useRef();
   const { scene } = useGLTF('/models/playstation/scene.gltf'); // adjust path if needed
-  return <primitive object={scene} scale={15} />;
+
+  // Auto-rotate the model
+  useFrame(() => {
+    if (modelRef.current) {
+      modelRef.current.rotation.y += 0.004;
+    }
+  });
+
+  return <primitive ref={modelRef} object={scene} scale={13} />;
 };
 
 const ControllerModel = () => {
